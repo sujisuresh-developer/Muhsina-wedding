@@ -40,7 +40,7 @@
 html,body{overflow-x:hidden}
 html,body,.modal{scrollbar-width:none;-ms-overflow-style:none}
 html::-webkit-scrollbar,body::-webkit-scrollbar,.modal::-webkit-scrollbar{display:none;width:0;height:0}
-html{-webkit-text-size-adjust:100%;text-size-adjust:100%;-webkit-tap-highlight-color:transparent;scroll-snap-type:y mandatory;scroll-behavior:smooth;background:var(--desk)}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%;-webkit-tap-highlight-color:transparent;scroll-snap-type:y proximity;scroll-behavior:smooth;background:var(--desk)}
 html.locked,html.locked body{overflow:hidden;height:100%}
 body{margin:0;background:var(--desk);color:var(--paper);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased}
 .grain{position:fixed;inset:0;pointer-events:none;z-index:50;opacity:.16;mix-blend-mode:overlay;
@@ -48,9 +48,9 @@ body{margin:0;background:var(--desk);color:var(--paper);font-family:var(--sans);
 @media (hover:none){.grain{mix-blend-mode:normal;opacity:.05}}
 
 /* continuous pages: full-width bands, A4 proportions on phones (height = 1.414 x width), one screen on larger displays */
-.page{position:relative;overflow:hidden;min-height:100vh;min-height:100svh;min-height:100dvh;scroll-snap-align:start;scroll-snap-stop:always;display:flex;align-items:center;justify-content:center;
+.page{position:relative;overflow:hidden;min-height:min(141.4vw,100vh);min-height:min(141.4vw,100svh);scroll-snap-align:start;display:flex;align-items:center;justify-content:center;
   padding-block:clamp(40px,11vw,84px);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
-.page.hero{min-height:100vh;min-height:100svh;min-height:100dvh}
+.page.hero{min-height:100vh;min-height:100svh}
 .sheet{position:relative;z-index:2;container-type:inline-size;width:min(100%,520px);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
 .dark{background:var(--ink);color:var(--paper)}
 .light{background:var(--paper);color:var(--text)}
